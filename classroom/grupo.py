@@ -18,14 +18,12 @@ class Grupo:
                 self._asignaturas = []
             self._asignaturas.append(Asignatura(x))
 
-    def agregarAlumno(self, alumno, lista=None):
-        if(lista is None or self.listadoAlumnos is None):
-            lista = []
-            lista.append(alumno)
-            self.listadoAlumnos = lista
-        else:
+    def agregarAlumno(self, alumno, lista=[]):
+        if(lista is None):
             lista.append(alumno)
             self.listadoAlumnos = self.listadoAlumnos + lista
+        else:
+            self.listadoAlumnos = lista + [alumno]
 
     
     @ classmethod
